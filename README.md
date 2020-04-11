@@ -12,21 +12,21 @@ ruby 2.5.1
 * Configuration
 
 * Database creation
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|unique: true|
 |email|string|unique: true|
 ### Association
 - has_many :comments
-- has_many :groups, through :user_group
+- has_many :group, through :user_group
 
-## groupsテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false, foreigin_key: true, unique: true|
 ### Association
-- has_many :users, through :user_group
+- has_many :user, through :user_group
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -34,7 +34,7 @@ ruby 2.5.1
 |body|string|
 |image|string|
 ### Association
-belongs_to :users
+belongs_to :user
 
 ## user_groupテーブル
 |Column|Type|Options|
@@ -42,8 +42,8 @@ belongs_to :users
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 * Database initialization
 
