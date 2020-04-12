@@ -12,10 +12,10 @@ ruby 2.5.1
 * Configuration
 
 * Database creation
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|unique: true|
+|name|string|unique: true,index: true|
 |email|string|unique: true|
 ### Association
 - has_many :comments
