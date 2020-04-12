@@ -29,6 +29,7 @@ ruby 2.5.1
 ### Association
 - has_many :users, through :user_groups
 - has_many :user_groups
+- has_many :comments
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -39,8 +40,8 @@ ruby 2.5.1
 |group|references|null: false, foreigin_key: true|
 
 ### Association
-belongs_to :user
-belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 ## user_groupテーブル
 |Column|Type|Options|
