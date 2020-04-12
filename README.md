@@ -20,7 +20,7 @@ ruby 2.5.1
 ### Association
 - has_many :comments
 - has_many :groups, through :user_groups
-- has_many :users_groups
+- has_many :user_groups
 
 ## groupテーブル
 |Column|Type|Options|
