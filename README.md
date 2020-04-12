@@ -19,7 +19,8 @@ ruby 2.5.1
 |email|string|unique: true|
 ### Association
 - has_many :comments
-- has_many :group, through :user_group
+- has_many :groups, through :user_groups
+- has_many :user_group
 
 ## groupテーブル
 |Column|Type|Options|
