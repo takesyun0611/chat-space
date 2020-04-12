@@ -20,28 +20,33 @@ ruby 2.5.1
 ### Association
 - has_many :comments
 - has_many :groups, through :user_groups
-- has_many :user_group
+- has_many :users_groups
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, foreigin_key: true, unique: true|
+|name|string|unique: true|
 ### Association
-- has_many :user, through :user_group
+- has_many :users, through :user_groups
+- has_many :user_groups
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|string|
 |image|string|
+|user|references|null: false, foreigin_key: true|
+|group|references|null: false, foreigin_key: true|
+
 ### Association
 belongs_to :user
+belongs_to :group
 
 ## user_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
