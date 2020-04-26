@@ -1,1 +1,24 @@
-サイド
+.side-bar
+  .side-bar__header
+    .side-bar__user-icon
+      .side-bar__name
+        name
+      .side-bar__icon
+        = link_to "#", class: "side-bar__btn" do
+          = icon('fas', 'edit')
+          %span<>
+        = link_to "#", class: "side-bar__btn" do
+          = icon('fas', 'cog')
+          %span<>
+  .side-bar__group
+    .side-bar__group-name
+      %p text
+      %p.side-bar__message メッセージがありません
+  .side-bar__group
+    .side-bar__group-name
+      %p text2
+      %p.side-bar__message メッセージがありません
+  .side-bar__group
+    .side-bar__group-name
+      %p text3
+      %p.side-bar__message メッセージがありません

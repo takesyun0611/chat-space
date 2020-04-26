@@ -1,3 +1,146 @@
 * {
   box-sizing: border-box;
 }
+// サイドバー　左側全体
+.side-bar {
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+  float: left;
+  &__header {
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__user-icon {
+    height: 20px;
+    width: 260px;
+    justify-content: space-between;
+    display: flex;
+  }
+  &__name {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  &__icon {
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__btn {
+    margin-left: 5px;
+    color: #ffffff;
+  }
+  &__group {
+    color:#ffffff;
+    height: 100px;
+    position: relative;
+  }
+  &__group-name {
+    font-size: 15px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 40px;
+  }
+  &__message {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+}
+// メインチャット右側全体
+.mainchat {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  background-color: #fafafa;
+  float: right;
+  &__header {
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+  }
+  &__title-name {
+    color: #333333;
+    font-size: 20px;
+  }
+  &__memberlist {
+    position: absolute;
+    top: 80px;
+    color: #999999;
+    font-size: 12px;
+  }
+  &__btn {
+    padding: 12px 20px 12px 20px;
+    color: #38aef0;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid;
+  }
+        // メインチャットディスプレイ
+        &__chat-display {
+          background-color: #fafafa;
+          width: calc(100vw - 300px);
+          height: calc(100vh - 190px);
+          padding: 35px 40px;
+        }
+          &__message {
+            color: #333333;
+            font-size: 16px;
+            padding-bottom: 46px;
+          }
+          &__Times-of-Day {
+            color: #999999;
+            font-size: 12px;
+          }
+          &__message-form {
+            margin-top: 12px;
+            color: #434a54;
+            font-size: 14px;
+          }
+  // チャットフォーム
+  &__form {
+    height: 90px;
+    width: calc(100vw - 300px);
+    background-color: #d2d2d2;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+  &__message-input {
+    background-color: #fafafa;
+    height: 50px;
+    width: calc(100% - 195px);
+    margin-left: 50px;
+  }
+  &__input-box {
+     display: flex;
+     position: relative;
+  }
+  &__initial-message {
+    color: #999999;
+    width: 100%;
+    font-size: 15px;
+    line-height: 50px;
+  }
+  &__image-btn {
+    font-size: 25px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+  &__image-btn-file {
+    display: none;
+  }
+  &__submit-btn {
+    background-color: #38aef0;
+    width: 100px;
+    height: 50px;
+    margin-left: 15px;
+    color: white;
+  }
+}
