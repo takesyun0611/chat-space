@@ -31,7 +31,9 @@
   }
   &__btn {
     margin-left: 5px;
-    color: #ffffff;
+    a {
+      color: #ffffff;
+    }
   }
   &__group {
     color:#ffffff;
