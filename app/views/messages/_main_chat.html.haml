@@ -1,31 +1,23 @@
 .mainchat
   .mainchat__header
-    %p.mainchat__title-name textname
+    %p.mainchat__title-name
+      = @group.name
     .mainchat__memberlist
-      %a.mainchat__menber-font メンバー
+      %a.mainchat__menber-font
+        Member :
+        - @group.users.each do |user|
+          = user.name
     .mainchat__edit
-      = link_to "#", class: "mainchat__btn" do
+      = link_to edit_group_path(current_user), class: "mainchat__btn" do
         Edit
   .mainchat__chat-display
-    .mainchat__message
-      名前
-      %a.mainchat__Times-of-Day
-        2020/4/19 19:00:00
-        %br
-      %a.mainchat__message-form
-        メッセージ
-    .mainchat__message
-      名前
-      %a.mainchat__Times-of-Day
-        2020/4/19 19:00:00
-        %br
-      %a.mainchat__message-form
-        今日は夜から雨
+    = render @messages
   .mainchat__form
-    %form.mainchat__message-input
-      .mainchat__input-box
-        %input{type:"text", class: "mainchat__initial-message", placeholder: "type a message"}
-        %label{class: "mainchat__image-btn"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "mainchat__image-btn-file"}
-    %input{type: "submit", class: "mainchat__submit-btn", value: "Send"}
+    .mainchat__message-input
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'mainchat__initial-message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'mainchat__image-btn' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'mainchat__image-btn-file'
+        = f.submit 'Send', class: 'mainchat__submit-btn'

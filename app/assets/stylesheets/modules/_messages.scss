@@ -96,6 +96,7 @@
           width: calc(100vw - 300px);
           height: calc(100vh - 190px);
           padding: 35px 40px;
+          overflow: visible scroll;
         }
           &__message {
             color: #333333;
@@ -111,6 +112,9 @@
             color: #434a54;
             font-size: 14px;
           }
+          .lower-message__content {
+            margin-top: 10px;
+          }
   // チャットフォーム
   &__form {
     height: 90px;
@@ -121,26 +125,26 @@
     align-items: center;
   }
   &__message-input {
-    background-color: #fafafa;
     height: 50px;
-    width: calc(100% - 195px);
+    width: 100%;
     margin-left: 50px;
+    position: relative;
   }
   &__input-box {
      display: flex;
      position: relative;
   }
   &__initial-message {
-    color: #999999;
     width: 100%;
     font-size: 15px;
     line-height: 50px;
+    padding-left: 10px;
   }
   &__image-btn {
     font-size: 25px;
     position: absolute;
     top: 8px;
-    right: 10px;
+    right: 120px;
   }
   &__image-btn-file {
     display: none;
@@ -148,8 +152,14 @@
   &__submit-btn {
     background-color: #38aef0;
     width: 100px;
-    height: 50px;
-    margin-left: 15px;
     color: white;
+    margin: 0 10px;
+  }
+  .new_message {
+    display: flex;
+  }
+  .field_with_errors {
+    width: calc(100% - 195px);
   }
 }
+
