@@ -4,16 +4,16 @@ $(function(){
       var html =
      `<div class="mainchat__message">
           ${message.user_name}
-        <a class="mainchat__Times-of-Day">
-          ${message.created_at}
-        <br>
-        </a>
         <a class="mainchat__message-form">
-          ${message.content}
+          <a class="mainchat__Times-of-Day">
+            ${message.created_at}
+          <br>
+          </a>
+          <div class="lower-message__content">
+            ${message.content}
+          </div>
+            <img src=${message.image} >
         </a>
-        <p class="lower-message__image">
-          ${message.image}
-        </p>
       </div>`
     return html;
   } else {
@@ -48,6 +48,11 @@ $(function(){
      $('.mainchat__chat-display').append(html);
      $('form')[0].reset();
      $('.mainchat__chat-display').animate({ scrollTop: $('.mainchat__chat-display')[0].scrollHeight});
+     $("input[type = 'submit']").prop('disabled', false);
    })
+   .fail(function() {
+    alert("メッセージ送信に失敗しました");
+    setTimeout("location.reload()",0);
+  });
   })
 });
