@@ -1,4 +1,5 @@
 .mainchat__message
+  .message{data: {message: {id: message.id}}}
   = message.user.name
   %a.mainchat__Times-of-Day
     = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
