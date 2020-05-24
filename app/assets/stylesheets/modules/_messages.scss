@@ -37,22 +37,20 @@
   }
   &__group-all {
     width: 300px;
-    height: 100vh;
+    height: calc(100vh - 100px);
+    overflow: visible scroll;
     a {
       color: #ffffff;
+      text-decoration: none;
     }
   }
   &__group {
     color:#ffffff;
-    height: 100px;
-    position: relative;
+    height: 60px;
   }
   &__group-name {
     font-size: 15px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    bottom: 40px;
+    margin: 20px 20px 0px 20px;
   }
   &__message {
     font-size: 11px;
