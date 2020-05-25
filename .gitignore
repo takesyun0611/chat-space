@@ -18,3 +18,4 @@
 
 public/uploads/*
 tmp/pids/server.pid
+config/secrets.yml
