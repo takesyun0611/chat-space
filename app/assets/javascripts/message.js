@@ -2,19 +2,19 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-     `<div class="mainchat__message">
-        <div class="message" data-message-id=${message.id}></div>
-            ${message.user_name}
-          <a class="mainchat__message-form">
-            <a class="mainchat__Times-of-Day">
-              ${message.created_at}
-            <br>
+     ` <div class="mainchat__message">
+          <div class="message" data-message-id=${message.id}></div>
+              ${message.user_name}
+            <a class="mainchat__message-form">
+              <a class="mainchat__Times-of-Day">
+                ${message.created_at}
+              <br>
+              </a>
+              <div class="lower-message__content">
+                ${message.content}
+              </div>
+                <img src=${message.image} >
             </a>
-            <div class="lower-message__content">
-              ${message.content}
-            </div>
-              <img src=${message.image} >
-          </a>
       </div>`
     return html;
   } else {
@@ -80,8 +80,8 @@ $(function(){
         insertHTML += buildHTML(message)
       });
       //メッセージが入ったHTMLに、入れ物ごと追加
-      $('.mainchat__message').append(insertHTML);
-      $('.mainchat__message').animate({ scrollTop: $('.mainchat__message')[0].scrollHeight});
+      $('.mainchat__chat-display').append(insertHTML);
+      $('.mainchat__chat-display').animate({ scrollTop: $('.mainchat__chat-display')[0].scrollHeight});
     }
   })
     .fail(function() {
